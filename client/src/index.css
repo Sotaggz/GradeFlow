@@ -1,0 +1,156 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+:root {
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+
+  --color-background: hsl(210 20% 98%);
+  --color-foreground: hsl(220 15% 20%);
+
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(220 15% 20%);
+
+  --color-popover: hsl(0 0% 100%);
+  --color-popover-foreground: hsl(220 15% 20%);
+
+  --color-primary: hsl(225 70% 55%);
+  --color-primary-foreground: hsl(0 0% 100%);
+
+  --color-secondary: hsl(180 50% 95%);
+  --color-secondary-foreground: hsl(180 70% 30%);
+
+  --color-muted: hsl(210 20% 90%);
+  --color-muted-foreground: hsl(220 10% 50%);
+
+  --color-accent: hsl(225 70% 95%);
+  --color-accent-foreground: hsl(225 70% 45%);
+
+  --color-destructive: hsl(0 84% 60%);
+  --color-destructive-foreground: hsl(0 0% 98%);
+
+  --color-border: hsl(220 15% 90%);
+  --color-input: hsl(220 15% 90%);
+  --color-ring: hsl(225 70% 55%);
+
+  --color-chart-1: hsl(225 70% 55%);
+  --color-chart-2: hsl(170 60% 45%);
+  --color-chart-3: hsl(260 60% 55%);
+  --color-chart-4: hsl(35 90% 60%);
+  --color-chart-5: hsl(340 75% 55%);
+
+  --color-sidebar: hsl(0 0% 100%);
+  --color-sidebar-foreground: hsl(220 15% 20%);
+  --color-sidebar-primary: hsl(225 70% 55%);
+  --color-sidebar-primary-foreground: hsl(0 0% 100%);
+  --color-sidebar-accent: hsl(225 70% 95%);
+  --color-sidebar-accent-foreground: hsl(225 70% 45%);
+  --color-sidebar-border: hsl(220 15% 90%);
+  --color-sidebar-ring: hsl(225 70% 55%);
+}
+
+/* Dark mode variables */
+.dark {
+  --color-background: hsl(220 15% 10%);
+  --color-foreground: hsl(210 20% 98%);
+
+  --color-card: hsl(220 15% 15%);
+  --color-card-foreground: hsl(210 20% 98%);
+
+  --color-popover: hsl(220 15% 15%);
+  --color-popover-foreground: hsl(210 20% 98%);
+
+  --color-primary: hsl(225 70% 60%);
+  --color-primary-foreground: hsl(220 15% 15%);
+
+  --color-secondary: hsl(220 15% 20%);
+  --color-secondary-foreground: hsl(180 50% 95%);
+
+  --color-muted: hsl(220 15% 20%);
+  --color-muted-foreground: hsl(220 10% 60%);
+
+  --color-accent: hsl(225 70% 25%);
+  --color-accent-foreground: hsl(225 70% 95%);
+
+  --color-destructive: hsl(0 84% 60%);
+  --color-destructive-foreground: hsl(0 0% 98%);
+
+  --color-border: hsl(220 15% 25%);
+  --color-input: hsl(220 15% 25%);
+  --color-ring: hsl(225 70% 60%);
+
+  --color-chart-1: hsl(225 70% 60%);
+  --color-chart-2: hsl(170 60% 55%);
+  --color-chart-3: hsl(260 60% 65%);
+  --color-chart-4: hsl(35 90% 70%);
+  --color-chart-5: hsl(340 75% 65%);
+
+  --color-sidebar: hsl(220 15% 15%);
+  --color-sidebar-foreground: hsl(210 20% 98%);
+  --color-sidebar-primary: hsl(225 70% 60%);
+  --color-sidebar-primary-foreground: hsl(220 15% 15%);
+  --color-sidebar-accent: hsl(225 70% 25%);
+  --color-sidebar-accent-foreground: hsl(225 70% 95%);
+  --color-sidebar-border: hsl(220 15% 25%);
+  --color-sidebar-ring: hsl(225 70% 60%);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  body {
+    font-family: var(--font-sans), sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+  
+  select {
+    background-color: transparent;
+    color: var(--color-foreground);
+    -moz-osx-font-smoothing: grayscale;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  
+  .dark select {
+    background-color: transparent;
+    color: var(--color-foreground);
+    -moz-osx-font-smoothing: grayscale;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  
+  select option {
+    background-color: var(--color-card);
+    color: var(--color-foreground);
+    -moz-osx-font-smoothing: grayscale;
+    border: transparent !important;
+    outline: none !important;
+    padding: 6px 4px !important;
+    margin: 2px 0 !important;
+  }
+  
+  .dark select option {
+    background-color: var(--color-card);
+    color: var(--color-foreground);
+    -moz-osx-font-smoothing: grayscale;
+    border: transparent !important;
+    outline: none !important;
+    padding: 6px 4px !important;
+    margin: 2px 0 !important;
+  }
+  
+  select option:checked {
+    background-color: var(--color-primary); 
+    color: var(--color-primary-foreground);
+  }
+}
